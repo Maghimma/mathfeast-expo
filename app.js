@@ -78,7 +78,7 @@
  * └──────────────────────────────────────────────────┘
  */
 
-const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjjq21jkA9s-vh_yWjFSW-lM6x-KaWZIyRIwo5nTj50_6_54E2HOcXSwmH7qH4p5XG/exec';
 
 // ── Stall data cache ──
 let stallsCache = null;
