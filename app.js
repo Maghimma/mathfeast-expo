@@ -1,45 +1,81 @@
 /**
  * NUMB3RS & NIBBLES — App Logic
  *
- * ┌─────────────────────────────────────────────────┐
- * │  GOOGLE SHEETS SETUP (one-time)                 │
- * ├─────────────────────────────────────────────────┤
- * │                                                 │
- * │  1. Create a Google Sheet with TWO tabs:        │
- * │     Tab "Stall Feedback" — columns:             │
- * │       Timestamp | Stall ID | Stall Name |       │
- * │       Rating | Enjoyed | Suggestions            │
- * │                                                 │
- * │     Tab "Expo Feedback" — columns:              │
- * │       Timestamp | Rating | Favorite Part |      │
- * │       Improvements | Attend Again               │
- * │                                                 │
- * │  2. Go to Extensions → Apps Script              │
- * │                                                 │
- * │  3. Replace the code with:                      │
- * │                                                 │
- * │     function doPost(e) {                        │
- * │       var data = JSON.parse(e.postData.contents);│
- * │       var ss = SpreadsheetApp                   │
- * │                  .getActiveSpreadsheet();       │
- * │       var sheet = ss                            │
- * │                  .getSheetByName(data.sheetName);│
- * │       sheet.appendRow(data.values);             │
- * │       return ContentService                     │
- * │         .createTextOutput(                      │
- * │           JSON.stringify({ status: "ok" })      │
- * │         )                                       │
- * │         .setMimeType(                           │
- * │           ContentService.MimeType.JSON          │
- * │         );                                      │
- * │     }                                           │
- * │                                                 │
- * │  4. Deploy → New Deployment → Web App           │
- * │     Execute as: Me                              │
- * │     Who has access: Anyone                      │
- * │                                                 │
- * │  5. Copy the URL and paste it below ↓           │
- * └─────────────────────────────────────────────────┘
+ * ┌──────────────────────────────────────────────────┐
+ * │  GOOGLE SHEETS SETUP (one-time)                  │
+ * ├──────────────────────────────────────────────────┤
+ * │                                                  │
+ * │  1. Create a Google Sheet with THREE tabs:       │
+ * │     Tab "Stall Feedback" — columns:              │
+ * │       Timestamp | Stall ID | Stall Name |        │
+ * │       Rating | Enjoyed | Suggestions             │
+ * │                                                  │
+ * │     Tab "Expo Feedback" — columns:               │
+ * │       Timestamp | Rating | Favorite Part |       │
+ * │       Improvements | Attend Again                │
+ * │                                                  │
+ * │     Tab "Stall Edits" — columns:                 │
+ * │       Timestamp | stallId | name | dish |        │
+ * │       shortDescription | fullDescription |       │
+ * │       ingredients                                │
+ * │                                                  │
+ * │  2. Go to Extensions → Apps Script               │
+ * │                                                  │
+ * │  3. Replace the code with:                       │
+ * │                                                  │
+ * │  function doPost(e) {                            │
+ * │    var data = JSON.parse(e.postData.contents);   │
+ * │    var ss = SpreadsheetApp                       │
+ * │               .getActiveSpreadsheet();           │
+ * │    var sheet = ss                                │
+ * │               .getSheetByName(data.sheetName);   │
+ * │    sheet.appendRow(data.values);                 │
+ * │    return ContentService                         │
+ * │      .createTextOutput(                          │
+ * │        JSON.stringify({ status: "ok" })          │
+ * │      )                                           │
+ * │      .setMimeType(                               │
+ * │        ContentService.MimeType.JSON              │
+ * │      );                                          │
+ * │  }                                               │
+ * │                                                  │
+ * │  function doGet(e) {                             │
+ * │    var ss = SpreadsheetApp                       │
+ * │               .getActiveSpreadsheet();           │
+ * │    var sheet = ss.getSheetByName("Stall Edits"); │
+ * │    if (!sheet) return ContentService             │
+ * │      .createTextOutput("[]")                     │
+ * │      .setMimeType(                               │
+ * │        ContentService.MimeType.JSON);            │
+ * │    var data = sheet.getDataRange().getValues();   │
+ * │    if (data.length <= 1) return ContentService   │
+ * │      .createTextOutput("[]")                     │
+ * │      .setMimeType(                               │
+ * │        ContentService.MimeType.JSON);            │
+ * │    var headers = data[0];                        │
+ * │    var rows = [];                                │
+ * │    for (var i = 1; i < data.length; i++) {       │
+ * │      var row = {};                               │
+ * │      for (var j = 0; j < headers.length; j++) {  │
+ * │        row[headers[j]] = data[i][j];             │
+ * │      }                                           │
+ * │      rows.push(row);                             │
+ * │    }                                             │
+ * │    return ContentService                         │
+ * │      .createTextOutput(                          │
+ * │        JSON.stringify(rows)                      │
+ * │      )                                           │
+ * │      .setMimeType(                               │
+ * │        ContentService.MimeType.JSON              │
+ * │      );                                          │
+ * │  }                                               │
+ * │                                                  │
+ * │  4. Deploy → New Deployment → Web App            │
+ * │     Execute as: Me                               │
+ * │     Who has access: Anyone                       │
+ * │                                                  │
+ * │  5. Copy the URL and paste it below ↓            │
+ * └──────────────────────────────────────────────────┘
  */
 
 const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
@@ -72,12 +108,55 @@ async function fetchStalls() {
   try {
     const res = await fetch('stalls.json');
     if (!res.ok) throw new Error(res.statusText);
-    stallsCache = await res.json();
+    let stalls = await res.json();
+
+    // Merge any live edits from Google Sheets
+    const edits = await fetchStallEdits();
+    if (edits && edits.length) {
+      stalls = mergeEdits(stalls, edits);
+    }
+
+    stallsCache = stalls;
     return stallsCache;
   } catch (err) {
     console.error('Failed to load stalls:', err);
     return null;
   }
+}
+
+async function fetchStallEdits() {
+  if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') return null;
+  try {
+    const res = await fetch(GOOGLE_SCRIPT_URL);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (err) {
+    console.warn('Could not fetch stall edits:', err);
+    return null;
+  }
+}
+
+function mergeEdits(stalls, edits) {
+  // Build a map of latest edit per stall ID
+  const latestEdits = {};
+  for (const edit of edits) {
+    const id = parseInt(edit.stallId);
+    if (!id) continue;
+    latestEdits[id] = edit; // later rows overwrite earlier ones
+  }
+
+  return stalls.map(stall => {
+    const edit = latestEdits[stall.id];
+    if (!edit) return stall;
+    // Only overwrite non-empty fields
+    const merged = { ...stall };
+    if (edit.name) merged.name = edit.name;
+    if (edit.dish) merged.dish = edit.dish;
+    if (edit.shortDescription) merged.shortDescription = edit.shortDescription;
+    if (edit.fullDescription) merged.fullDescription = edit.fullDescription;
+    if (edit.ingredients) merged.ingredients = edit.ingredients;
+    return merged;
+  });
 }
 
 // ════════════════════════
@@ -210,7 +289,10 @@ async function initStallPage() {
     <div class="stall-detail">
       <a href="index.html" class="back-link">\u2190 Back to all stalls</a>
 
-      <h1>${stall.name}</h1>
+      <div class="stall-title-row">
+        <h1>${stall.name}</h1>
+        <button class="btn-edit-toggle" id="editToggle">Edit Details</button>
+      </div>
       <span class="stall-topic-badge">${stall.topic}</span>
 
       <div class="stall-meta-row">
@@ -222,6 +304,38 @@ async function initStallPage() {
       <p class="stall-description">${stall.fullDescription}</p>
 
       ${stall.ingredients ? `<div class="ingredients-section"><strong>Ingredients</strong>${stall.ingredients}</div>` : ''}
+
+      <!-- Edit Form (hidden by default) -->
+      <div class="edit-section" id="editSection" style="display:none">
+        <h2>Edit Stall Details</h2>
+        <p class="subtitle">Fix any mistakes — changes go live on next page load.</p>
+        <form id="stallEditForm">
+          <div class="form-group">
+            <label for="editName">Stall Name</label>
+            <input type="text" id="editName" value="${stall.name.replace(/"/g, '&quot;')}">
+          </div>
+          <div class="form-group">
+            <label for="editDish">Dish</label>
+            <input type="text" id="editDish" value="${(stall.dish || '').replace(/"/g, '&quot;')}">
+          </div>
+          <div class="form-group">
+            <label for="editShort">Short Description</label>
+            <textarea id="editShort">${stall.shortDescription}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="editFull">Full Description</label>
+            <textarea id="editFull" style="min-height:160px">${stall.fullDescription}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="editIngredients">Ingredients</label>
+            <textarea id="editIngredients">${stall.ingredients || ''}</textarea>
+          </div>
+          <div class="edit-actions">
+            <button type="submit" class="btn-submit">Save Changes</button>
+            <button type="button" class="btn-cancel" id="editCancel">Cancel</button>
+          </div>
+        </form>
+      </div>
 
       <h3 class="section-heading"><span class="icon">\uD83D\uDC65</span> Presented by</h3>
       <div class="team-grid">
@@ -270,6 +384,7 @@ async function initStallPage() {
 
   wireStars();
   wireStallForm(stall);
+  wireEditForm(stall);
 }
 
 function renderNotFound(el) {
@@ -280,6 +395,67 @@ function renderNotFound(el) {
       <a href="index.html">\u2190 Back to all stalls</a>
     </div>`;
 }
+
+// ════════════════════════
+//  EDIT FORM
+// ════════════════════════
+
+function wireEditForm(stall) {
+  const toggle  = document.getElementById('editToggle');
+  const section = document.getElementById('editSection');
+  const cancel  = document.getElementById('editCancel');
+  const form    = document.getElementById('stallEditForm');
+  if (!toggle || !section || !form) return;
+
+  toggle.addEventListener('click', () => {
+    const open = section.style.display !== 'none';
+    section.style.display = open ? 'none' : 'block';
+    toggle.textContent = open ? 'Edit Details' : 'Cancel Editing';
+    if (!open) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  cancel.addEventListener('click', () => {
+    section.style.display = 'none';
+    toggle.textContent = 'Edit Details';
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = 'Saving\u2026';
+
+    const ok = await submitFeedback({
+      sheetName: 'Stall Edits',
+      values: [
+        new Date().toISOString(),
+        stall.id,
+        document.getElementById('editName').value.trim(),
+        document.getElementById('editDish').value.trim(),
+        document.getElementById('editShort').value.trim(),
+        document.getElementById('editFull').value.trim(),
+        document.getElementById('editIngredients').value.trim()
+      ]
+    });
+
+    btn.disabled = false;
+    btn.textContent = 'Save Changes';
+
+    if (ok) {
+      showToast('Changes saved! Reload to see updates.', 'success');
+      section.style.display = 'none';
+      toggle.textContent = 'Edit Details';
+      // Clear cache so next load picks up edits
+      stallsCache = null;
+    } else {
+      showToast('Something went wrong. Please try again.', 'error');
+    }
+  });
+}
+
+// ════════════════════════
+//  STALL FEEDBACK FORM
+// ════════════════════════
 
 function wireStallForm(stall) {
   const form = document.getElementById('stallFeedbackForm');
@@ -404,7 +580,7 @@ function resetStars(container) {
 async function submitFeedback(data) {
   if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
     // Demo mode — no backend configured yet
-    console.log('%c[Demo] Feedback submitted:', 'color:#D4903C;font-weight:bold', data);
+    console.log('%c[Demo] Submitted:', 'color:#D4903C;font-weight:bold', data);
     await new Promise(r => setTimeout(r, 700));
     return true;
   }

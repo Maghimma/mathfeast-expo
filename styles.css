@@ -953,6 +953,95 @@ body::before {
   background: var(--gold-glow);
 }
 
+/* ── Stall Title Row (with edit button) ── */
+.stall-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btn-edit-toggle {
+  flex-shrink: 0;
+  padding: 0.42rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  background: var(--gold-glow);
+  border: 1px solid rgba(196, 136, 47, 0.25);
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+  margin-top: 0.5rem;
+}
+
+.btn-edit-toggle:hover {
+  background: rgba(196, 136, 47, 0.18);
+  border-color: var(--gold);
+}
+
+/* ── Edit Section ── */
+.edit-section {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  border-radius: var(--r-lg);
+  padding: 2rem 1.6rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 0 4px var(--gold-glow), var(--shadow-sm);
+  animation: fadeUp 0.35s var(--ease-out);
+}
+
+.edit-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.edit-section .subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.edit-actions .btn-submit {
+  width: auto;
+  flex: 1;
+}
+
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.btn-cancel:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+  background: var(--paper-dark);
+}
+
 /* Divider */
 .divider {
   display: flex;
@@ -1414,6 +1503,13 @@ body::before {
   .stall-detail h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
 
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .stall-title-row { flex-direction: column; gap: 0.5rem; }
+  .btn-edit-toggle { align-self: flex-start; }
+  .edit-section { padding: 1.5rem 1.2rem; }
+  .edit-actions { flex-direction: column; }
+  .edit-actions .btn-submit,
+  .btn-cancel { width: 100%; }
 
   .footer::before { font-size: 0.65rem; }
 }
