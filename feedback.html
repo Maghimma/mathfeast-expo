@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback — NUMB3RS &amp; Nibbles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NUMB3RS <span>&amp; Nibbles</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Stalls</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="feedback-page">
+    <h1>Share Your Thoughts</h1>
+    <p class="page-subtitle">Help us make the next expo even better!</p>
+
+    <div class="feedback-section">
+      <form id="expoFeedbackForm">
+
+        <div class="form-group">
+          <label>How would you rate the overall expo?</label>
+          <div class="star-rating" data-rating="0" id="expoRating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="favoritePart">What was your favorite part of the expo?</label>
+          <textarea id="favoritePart" placeholder="Tell us what you enjoyed most..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="improvements">What could we improve for next time?</label>
+          <textarea id="improvements" placeholder="Any suggestions or ideas..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Would you attend again?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="attendAgain" id="attend-yes" value="Yes">
+              <label for="attend-yes">Yes</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="attendAgain" id="attend-maybe" value="Maybe">
+              <label for="attend-maybe">Maybe</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="attendAgain" id="attend-no" value="No">
+              <label for="attend-no">No</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Feedback</button>
+
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">NUMB3RS &amp; Nibbles 2026</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

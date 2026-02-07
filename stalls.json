@@ -1,0 +1,600 @@
+[
+  {
+    "id": 1,
+    "name": "Fractal Feast!",
+    "presenter": "Aditi",
+    "topic": "Fractals",
+    "dish": "Pizza with fractal toppings",
+    "shortDescription": "Dive into the mesmerizing world of fractals through pizza art — where every slice reveals a pattern within a pattern!",
+    "fullDescription": "Fractals are geometric shapes that repeat themselves at every scale — zoom in, and you'll find the same pattern over and over. At Fractal Feast, Aditi brings this concept to life with pizza toppings arranged in fractal patterns. Discover famous fractals like the Sierpinski triangle and Koch snowflake, and see how these infinite patterns appear everywhere in nature, from broccoli florets to coastlines. You might never look at your pizza toppings the same way again!",
+    "image": "images/stall-1-pizza.jpeg",
+    "team": [
+      {
+        "name": "Aditi",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Self-similarity",
+      "Sierpinski triangle",
+      "Koch snowflake",
+      "Fractal dimension",
+      "Patterns in nature"
+    ],
+    "ingredients": "Pizza base, tomato sauce, cheese, onion, capsicum, oregano, chilli flakes, salt. Optional: broccoli. Sweet version: pizza base, Nutella/chocolate sauce, M&Ms/Gems.",
+    "sampleAvailable": "likely",
+    "dietary": "veg"
+  },
+  {
+    "id": 2,
+    "name": "Spirals, Sequences & Sweets",
+    "presenter": "Harini",
+    "topic": "Fibonacci Sequence & Golden Ratio",
+    "dish": "Cookies",
+    "shortDescription": "Follow the Fibonacci sequence from sunflower seeds to cookie spirals — nature's favourite number pattern!",
+    "fullDescription": "1, 1, 2, 3, 5, 8, 13… the Fibonacci sequence is everywhere — from the spiral of a seashell to the petals on a flower. Harini explores how this magical sequence connects to the golden ratio (1.618…) and creates beautiful spiral patterns. Watch as cookies become a canvas for Fibonacci spirals, and discover why nature keeps choosing these numbers. You'll leave seeing spirals everywhere you look!",
+    "image": "images/stall-2-cookies.jpeg",
+    "team": [
+      {
+        "name": "Harini",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Fibonacci sequence",
+      "Golden ratio (φ)",
+      "Spiral patterns",
+      "Recursive sequences",
+      "Patterns in nature"
+    ],
+    "ingredients": "Flour, butter, sugar, egg (or milk), vanilla essence, baking powder/soda. Optional: chocolate chips.",
+    "sampleAvailable": true,
+    "dietary": "egg"
+  },
+  {
+    "id": 3,
+    "name": "Stay or Switch!",
+    "presenter": "Maghimma",
+    "topic": "The Monty Hall Problem",
+    "dish": "Mini cupcakes",
+    "shortDescription": "Play the famous Monty Hall game and discover why switching doors gives you a 2/3 chance of winning a cupcake!",
+    "fullDescription": "Behind one of three cups hides a delicious mini cupcake — the other two are empty. You pick one, a losing cup is revealed, and now you face the big question: stay or switch? Most people's intuition says it doesn't matter, but probability says otherwise — switching wins 2/3 of the time! Play multiple rounds, track the results on a tally sheet, and see conditional probability in action. This brain-teasing problem has stumped even professional mathematicians!",
+    "image": "images/stall-3-cupcakes.jpeg",
+    "team": [
+      {
+        "name": "Maghimma",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Conditional probability",
+      "Monty Hall problem",
+      "Sample space",
+      "Expected value",
+      "Experimental vs theoretical probability"
+    ],
+    "ingredients": "Flour, sugar, butter, eggs, milk, baking powder, vanilla essence, cocoa powder, icing sugar.",
+    "sampleAvailable": true,
+    "dietary": "egg"
+  },
+  {
+    "id": 4,
+    "name": "Pi, But It's Pizza!",
+    "presenter": "Hasita",
+    "topic": "Pi & Circles",
+    "dish": "Pizza",
+    "shortDescription": "From ancient Greece to your plate — discover how pi connects every pizza's circumference to its diameter!",
+    "fullDescription": "Take any circular pizza, divide its circumference by its diameter, and you'll always get the same magical number: π ≈ 3.14159… Hasita takes you on a journey through the history of pizza and pi, showing how this irrational number is baked into every circle. Measure real pizzas, calculate areas and circumferences, and see why mathematicians have been obsessed with pi for thousands of years. Warning: you'll want pizza after this!",
+    "image": "images/stall-4-pizza.jpeg",
+    "team": [
+      {
+        "name": "Hasita",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Pi (π)",
+      "Circumference",
+      "Area of circles",
+      "Irrational numbers",
+      "Circle geometry"
+    ],
+    "ingredients": "Pizza base, tomato sauce, cheese, sweet corn, oregano, chilli flakes, seasoning.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 5,
+    "name": "The Fizzy Lab",
+    "presenter": "Hansini",
+    "topic": "Descriptive Statistics",
+    "dish": "Soda taste test",
+    "shortDescription": "Can you tell Pepsi from Coke blindfolded? Put your taste buds to the test and graph the results!",
+    "fullDescription": "Welcome to The Fizzy Lab — a blind taste test turned statistics experiment! Hansini challenges you to identify five different sodas without seeing the labels, then uses your results to explore descriptive statistics. Watch as the class data transforms into histograms, and calculate the mean, median, and mode of taste-test scores. It's science, math, and fizzy drinks all in one refreshing experience!",
+    "image": "images/stall-5-soda.jpeg",
+    "team": [
+      {
+        "name": "Hansini",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Mean",
+      "Median",
+      "Mode",
+      "Histograms",
+      "Data collection & analysis"
+    ],
+    "ingredients": "Pepsi, Coca-Cola, Sprite, Fanta, Mountain Dew.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 6,
+    "name": "The Tiratio",
+    "presenter": "Deepshika",
+    "topic": "Angles & Measurement",
+    "dish": "Tiramisu",
+    "shortDescription": "Explore the delicious world of angles — from acute to obtuse — through the layered geometry of tiramisu!",
+    "fullDescription": "Angles are everywhere, and Deepshika proves it with tiramisu — the Italian dessert whose very layers and slices create a playground of geometry. Learn about acute, right, obtuse, and reflex angles, practise measuring them with a protractor, and see how angle types show up in food presentation and architecture alike. This stall brings a whole new angle to dessert!",
+    "image": "images/stall-6-tiramisu.jpeg",
+    "team": [
+      {
+        "name": "Deepshika",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Acute angles",
+      "Right angles",
+      "Obtuse angles",
+      "Angle measurement",
+      "Protractor use"
+    ],
+    "ingredients": "Mascarpone cheese, eggs or heavy cream, sugar, espresso, cocoa powder, biscuits/ladyfingers.",
+    "sampleAvailable": false,
+    "dietary": "egg"
+  },
+  {
+    "id": 7,
+    "name": "Math Venture",
+    "presenter": "Sarah",
+    "topic": "Shapes & Geometry Formulae",
+    "dish": "Ladoo & Barfi",
+    "shortDescription": "See geometry come alive through traditional Indian sweets — from spherical ladoos to rectangular barfi!",
+    "fullDescription": "Ladoos are spheres, barfi comes in rectangles, and every sweet has a story told through geometry. Sarah uses beloved Indian desserts to explore 3D shapes, surface areas, and volume formulae in the most delicious way possible. Calculate the volume of a perfect ladoo, find the surface area of a barfi slab, and discover the geometric precision hidden in every sweet shop. Math has never tasted this good!",
+    "image": "images/stall-7-sweets.jpeg",
+    "team": [
+      {
+        "name": "Sarah",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "3D shapes",
+      "Surface area",
+      "Volume",
+      "Geometry formulae",
+      "Spatial reasoning"
+    ],
+    "ingredients": "Besan/coconut, ghee, sugar/jaggery, cardamom, nuts (or milk + sugar for barfi).",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 8,
+    "name": "Pizza Theorem",
+    "presenter": "Janasruti",
+    "topic": "Pizza Geometry & Algebra",
+    "dish": "Pizza",
+    "shortDescription": "Slice into the Pizza Theorem and discover the hidden math behind surface area, slice angles, and fair sharing!",
+    "fullDescription": "How do you split a pizza perfectly fairly? Is a larger pizza always a better deal? Janasruti tackles these questions with real pizza, rulers, and the actual Pizza Theorem from mathematics. Explore how surface area and slice angles determine how much pizza you really get, and use basic algebra to prove that equal-looking slices aren't always equal. You'll become a smarter pizza orderer after this stall!",
+    "image": "images/stall-8-pizza.jpeg",
+    "team": [
+      {
+        "name": "Janasruti",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Surface area",
+      "Slice angles",
+      "Fair division",
+      "Basic algebra",
+      "The Pizza Theorem"
+    ],
+    "ingredients": "Pizza base, sauce, cheese, onion, capsicum, corn.",
+    "sampleAvailable": "maybe",
+    "dietary": "veg"
+  },
+  {
+    "id": 9,
+    "name": "Crunching Numbers with Cookies",
+    "presenter": "Nyle",
+    "topic": "Circumference",
+    "dish": "Chocolate chip cookies",
+    "shortDescription": "Measure the circumference of cookies to prove that pi is hiding in every circle — even edible ones!",
+    "fullDescription": "Grab a cookie, wrap a string around it, and measure — Nyle shows you how every circular cookie proves the existence of pi. By measuring the circumference and diameter of cookies of different sizes, you'll see that the ratio always lands near 3.14. This hands-on stall makes the abstract concept of circumference tangible (and tasty). It's the crunchiest math lesson you'll ever have!",
+    "image": "images/stall-9-cookies.jpeg",
+    "team": [
+      {
+        "name": "Nyle",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Circumference",
+      "Diameter",
+      "Pi ratio",
+      "Circle measurement",
+      "Approximation"
+    ],
+    "ingredients": "Flour, butter, sugar, egg (or milk), vanilla essence, baking soda, chocolate chips.",
+    "sampleAvailable": false,
+    "dietary": "egg"
+  },
+  {
+    "id": 10,
+    "name": "From Points to Polygons",
+    "presenter": "Lakshana",
+    "topic": "Geometry & Angles",
+    "dish": "Polygon cookies",
+    "shortDescription": "Build your way from simple points to complex polygons — then admire your geometric creations as cookies!",
+    "fullDescription": "Triangles, pentagons, hexagons — Lakshana takes you on a journey from the simplest geometric building blocks to complex polygon shapes, all rendered in cookie form. Learn about angle sums, interior angles, and why certain polygon shapes tile perfectly while others don't. Cut, shape, and decorate polygon cookies while discovering the mathematical rules that govern their geometry. Every bite is a lesson in shape theory!",
+    "image": "images/stall-10-cookies.jpeg",
+    "team": [
+      {
+        "name": "Lakshana",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Polygons",
+      "Interior angles",
+      "Angle sum property",
+      "Tessellation",
+      "Regular vs irregular shapes"
+    ],
+    "ingredients": "Flour, leavener, salt, sugar, butter, egg, vanilla. Optional: icing for decoration.",
+    "sampleAvailable": "maybe",
+    "dietary": "egg"
+  },
+  {
+    "id": 11,
+    "name": "The Cake Study",
+    "presenter": "Deekshaa",
+    "topic": "Symmetry & Measurement",
+    "dish": "Homemade chocolate cake",
+    "shortDescription": "Master the science of perfectly symmetrical cake cutting and learn unit conversions along the way!",
+    "fullDescription": "Cutting a cake into perfectly equal pieces is harder than it looks — and it's pure mathematics. Deekshaa explores symmetry through scientific cake-cutting techniques, showing how measurement and precision create fairness. Along the way, you'll practise converting between grams and ounces, millilitres and cups, and see how symmetry principles apply to everything from cake decoration to crystal structures.",
+    "image": "images/stall-11-cake.jpeg",
+    "team": [
+      {
+        "name": "Deekshaa",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Line symmetry",
+      "Rotational symmetry",
+      "Unit conversion",
+      "Precision in measurement",
+      "Equal division"
+    ],
+    "ingredients": "Biscuits, milk, baking soda, baking powder, Nutella (homemade). Optional: cocoa powder.",
+    "sampleAvailable": "maybe",
+    "dietary": "veg"
+  },
+  {
+    "id": 13,
+    "name": "Profit & Loss in a Bakery Shop",
+    "presenter": "Mithul",
+    "topic": "Profit & Loss",
+    "dish": "Bread",
+    "shortDescription": "Run a mini bakery and learn how cost price, selling price, and discounts determine your profit!",
+    "fullDescription": "Ever wondered how bakeries make money? Mithul breaks down the business math behind every loaf of bread — from cost price and selling price to discounts and profit percentages. Calculate real profit margins, figure out break-even points, and see how even small percentage changes can make or break a business. You'll walk away understanding the math that drives every shop you visit!",
+    "image": "images/stall-13-bread.jpeg",
+    "team": [
+      {
+        "name": "Mithul",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Cost price & selling price",
+      "Profit percentage",
+      "Discount",
+      "Break-even point",
+      "Business math"
+    ],
+    "ingredients": "Wheat flour, yeast, sugar, salt, warm water, milk, butter/oil.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 14,
+    "name": "Fraction Cake",
+    "presenter": "Aayush",
+    "topic": "Fractions",
+    "dish": "Layered fraction cake",
+    "shortDescription": "See fractions come to life as colourful cake layers — because nothing explains 'parts of a whole' like dessert!",
+    "fullDescription": "What's ½ of ¾? It's much easier to understand when you can see (and eat) it! Aayush uses a beautifully layered fraction cake to teach fractions visually — each layer represents a different fraction, and cutting the cake demonstrates operations like addition, subtraction, and equivalence. Explore equivalent fractions, improper fractions, and mixed numbers through the most delicious visual aid ever created.",
+    "image": "images/stall-14-cake.jpeg",
+    "team": [
+      {
+        "name": "Aayush",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Parts of a whole",
+      "Equivalent fractions",
+      "Mixed numbers",
+      "Adding fractions",
+      "Visual fractions"
+    ],
+    "ingredients": "Flour/maida, sugar, butter/oil, eggs or milk, baking powder, vanilla essence. Optional: cream/food colour.",
+    "sampleAvailable": true,
+    "dietary": "egg"
+  },
+  {
+    "id": 15,
+    "name": "Cake Time",
+    "presenter": "Nakul",
+    "topic": "Ratio, Shape & Weight",
+    "dish": "Chocolate cake",
+    "shortDescription": "Explore ratios, shapes, and weight by comparing chocolate cake ingredients and slices!",
+    "fullDescription": "How much cocoa makes the perfect chocolate cake? What's the ideal ratio of flour to sugar? Nakul dives into the math of ratios through cake-making, showing how comparing quantities is at the heart of every great recipe. Weigh ingredients, compare slice sizes, and discover that ratio and proportion are the secret ingredients behind consistent, delicious results every single time.",
+    "image": "images/stall-15-cake.jpeg",
+    "team": [
+      {
+        "name": "Nakul",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Ratios",
+      "Comparing quantities",
+      "Weight measurement",
+      "Proportion",
+      "Scaling recipes"
+    ],
+    "ingredients": "Cocoa powder, milk, vanilla essence, maida, egg, baking powder, baking soda, chocolate.",
+    "sampleAvailable": true,
+    "dietary": "egg"
+  },
+  {
+    "id": 16,
+    "name": "Graph & Gulp!",
+    "presenter": "Bragadeesh",
+    "topic": "Data & Graphs",
+    "dish": "Fruit smoothie cups",
+    "shortDescription": "Rate fruit smoothies, then watch your opinions transform into bar graphs, line charts, and averages!",
+    "fullDescription": "Taste different fruit smoothie combinations, rate them, and watch the data come alive! Bragadeesh turns your taste preferences into a real-time data visualisation exercise. See how individual ratings aggregate into bar graphs and line charts, calculate averages across the group, and discover how data tells a story. It's delicious, interactive, and you'll walk away knowing how to read and create graphs like a pro!",
+    "image": "images/stall-16-smoothie.jpeg",
+    "team": [
+      {
+        "name": "Bragadeesh",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Bar graphs",
+      "Line charts",
+      "Averages",
+      "Data visualisation",
+      "Frequency tables"
+    ],
+    "ingredients": "Milk/yogurt, banana, mixed fruits, honey/sugar.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 17,
+    "name": "Chaat Chaska",
+    "presenter": "Arnav",
+    "topic": "Fractions & Ratios",
+    "dish": "Chaat / Bhel",
+    "shortDescription": "Measure, budget, and sequence your way through the perfect plate of chaat — it's math you can munch!",
+    "fullDescription": "Building the perfect plate of chaat is all about fractions and ratios — how much sev to puffed rice, the right fraction of chutney, and balancing flavours by proportion. Arnav guides you through measuring ingredients, calculating costs, and sequencing the assembly of everyone's favourite street food. Discover how everyday cooking is secretly a math exercise in measurement and ratio.",
+    "image": "images/stall-17-chaat.jpeg",
+    "team": [
+      {
+        "name": "Arnav",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Fractions",
+      "Ratios",
+      "Budgeting",
+      "Measurement",
+      "Sequencing"
+    ],
+    "ingredients": "Puffed rice, sev, onion, tomato, boiled potato, chutneys, lemon, coriander, masala.",
+    "sampleAvailable": false,
+    "dietary": "veg"
+  },
+  {
+    "id": 18,
+    "name": "Measure & Mix!",
+    "presenter": "Navnit",
+    "topic": "Measurement & Conversion",
+    "dish": "Lemonade / Mocktail",
+    "shortDescription": "Mix the perfect lemonade while mastering millilitres, grams, and the art of unit conversion!",
+    "fullDescription": "How many millilitres in a cup? How many grams of sugar per litre? Navnit turns lemonade-making into a measurement masterclass. Practise converting between units, understand ratios in liquid form, and discover why precision in measurement is the difference between refreshing lemonade and a sour disaster. Mix, measure, and sip your way to measurement fluency!",
+    "image": "images/stall-18-lemonade.jpeg",
+    "team": [
+      {
+        "name": "Navnit",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Unit conversion",
+      "Millilitres & grams",
+      "Ratios",
+      "Measurement tools",
+      "Precision"
+    ],
+    "ingredients": "Lemon, water/soda, sugar, mint, ice.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 19,
+    "name": "Proportion Popcorn!",
+    "presenter": "Alphonse",
+    "topic": "Ratios & Proportions",
+    "dish": "Korean chicken popcorn",
+    "shortDescription": "Scale up a Korean chicken popcorn recipe and master the art of ratios and proportions!",
+    "fullDescription": "Making Korean chicken popcorn for 5 people? What about 50? Alphonse shows how ratios and proportions are the key to scaling any recipe without losing flavour. Learn to set up and solve proportions, understand cross-multiplication, and see why maintaining the right ratio of spice to chicken is both a mathematical and culinary necessity. Proportional thinking has never been this crispy!",
+    "image": "images/stall-19-popcorn.jpeg",
+    "team": [
+      {
+        "name": "Alphonse",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Ratios",
+      "Proportions",
+      "Cross-multiplication",
+      "Scaling",
+      "Direct proportion"
+    ],
+    "ingredients": "Boneless chicken, flour/cornflour, salt, pepper, garlic, soy sauce, chilli flakes, ketchup/gochujang (optional), oil.",
+    "sampleAvailable": true,
+    "dietary": "nonveg"
+  },
+  {
+    "id": 20,
+    "name": "Calculus in Cocoa",
+    "presenter": "Mirithul",
+    "topic": "Integral Calculus",
+    "dish": "Assorted chocolates",
+    "shortDescription": "Get a taste of integral calculus — the math of accumulation — explained through chocolate and graphs!",
+    "fullDescription": "Calculus might sound intimidating, but Mirithul breaks it down with chocolate and simple demos. Explore the basic idea behind integration — how small pieces add up to a whole — using visual graphs and hands-on worksheets. See how the area under a curve connects to real-world accumulation, from filling a cup of cocoa to calculating total distances. It's a gentle, chocolatey introduction to one of math's most powerful tools!",
+    "image": "images/stall-20-chocolate.jpeg",
+    "team": [
+      {
+        "name": "Mirithul",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Integration basics",
+      "Area under a curve",
+      "Accumulation",
+      "Limits (intro)",
+      "Summation"
+    ],
+    "ingredients": "Assorted chocolates (store-bought).",
+    "sampleAvailable": false,
+    "dietary": "veg"
+  },
+  {
+    "id": 21,
+    "name": "Predict the Pick!",
+    "presenter": "Vajraaditya",
+    "topic": "Probability",
+    "dish": "Assorted chocolates",
+    "shortDescription": "Pick chocolates, track outcomes, and discover how probability predicts what you'll grab next!",
+    "fullDescription": "Reach into a box of assorted chocolates, note what you picked, and repeat. Vajraaditya uses this simple experiment to reveal the power of probability. Track flavour frequencies across many picks, calculate experimental probabilities, and compare them to theoretical predictions. Watch as the law of large numbers unfolds in real time — the more you pick, the closer reality matches the math!",
+    "image": "images/stall-21-chocolates.jpeg",
+    "team": [
+      {
+        "name": "Vajraaditya",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Experimental probability",
+      "Theoretical probability",
+      "Frequency",
+      "Law of large numbers",
+      "Random events"
+    ],
+    "ingredients": "Assorted chocolates (mixed flavours).",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 22,
+    "name": "Sandwich Time!",
+    "presenter": "Pranav",
+    "topic": "Scale & Exponents",
+    "dish": "Three-layer sandwich",
+    "shortDescription": "Build towering sandwiches to understand scale, exponents, and mind-bending size comparisons!",
+    "fullDescription": "How big is a black hole compared to an atom? Pranav uses stacked sandwiches and pancakes to explore the concept of scale and exponential growth. Starting from everyday sizes, exponentially scale up to understand the Schwarzschild radius and how mass relates to size in extreme physics. This stall makes the incomprehensibly large (and small) suddenly graspable — one delicious layer at a time.",
+    "image": "images/stall-22-sandwich.jpeg",
+    "team": [
+      {
+        "name": "Pranav",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Exponents",
+      "Scale comparison",
+      "Powers of 10",
+      "Schwarzschild radius",
+      "Orders of magnitude"
+    ],
+    "ingredients": "Bread, cheese, vegetables, sauce. Optional: pancake mix.",
+    "sampleAvailable": "maybe",
+    "dietary": "veg"
+  },
+  {
+    "id": 23,
+    "name": "Pea-Sized Black Hole",
+    "presenter": "Krish",
+    "topic": "Scale & Density",
+    "dish": "Peas snack cup",
+    "shortDescription": "What if Earth were compressed to the size of a pea? Explore scale, density, and black-hole physics!",
+    "fullDescription": "A pea-sized black hole would contain the entire mass of Earth — that's how extreme density works! Krish uses actual peas to explore the mind-bending relationship between mass, volume, and density. Calculate how much matter fits in tiny spaces, compare densities of everyday objects, and understand why size and weight don't always go hand in hand. Small snack, enormous concepts!",
+    "image": "images/stall-23-peas.jpeg",
+    "team": [
+      {
+        "name": "Krish",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Density",
+      "Mass vs volume",
+      "Compression",
+      "Scale",
+      "Gravitational physics"
+    ],
+    "ingredients": "Green peas, salt. Optional: seasoning.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  },
+  {
+    "id": 24,
+    "name": "Fries with Sid",
+    "presenter": "Siddarth",
+    "topic": "Fractions & Portioning",
+    "dish": "French fries",
+    "shortDescription": "Learn fractions and fair portioning through everyone's favourite snack — crispy french fries!",
+    "fullDescription": "How do you split a bag of fries among friends? What fraction does each person get? Siddarth uses french fries to make fractions fun and tangible. Practise dividing quantities into equal parts, work with fractions of different sizes, and see how fair portioning is really just fraction math in disguise. It's the crispiest way to learn about parts of a whole!",
+    "image": "images/stall-24-fries.jpeg",
+    "team": [
+      {
+        "name": "Siddarth",
+        "role": "Presenter"
+      }
+    ],
+    "concepts": [
+      "Fractions",
+      "Fair division",
+      "Parts of a whole",
+      "Equal sharing",
+      "Portioning"
+    ],
+    "ingredients": "Potato, oil (or airfryer), salt. Optional: seasoning.",
+    "sampleAvailable": true,
+    "dietary": "veg"
+  }
+]

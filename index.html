@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUMB3RS &amp; NIBBLES</title>
+  <meta name="description" content="Where Numbers Meet Nibbles — a culinary math expo experience">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NUMB3RS <span>&amp; Nibbles</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Stalls</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-mosaic">
+      <img src="images/stall-1-pizza.jpeg" alt="" loading="eager">
+      <img src="images/stall-3-cupcakes.jpeg" alt="" loading="eager">
+      <img src="images/stall-9-cookies.jpeg" alt="" loading="eager">
+      <img src="images/stall-6-tiramisu.jpeg" alt="" loading="eager">
+      <img src="images/stall-7-sweets.jpeg" alt="" loading="eager">
+      <img src="images/stall-24-fries.jpeg" alt="" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Welcome to</div>
+      <h1>NUMB3RS <span class="accent">&amp; Nibbles</span></h1>
+      <p class="hero-tagline">Where Numbers Meet Nibbles</p>
+      <div class="hero-meta">
+        <span>&pi; Feb 14, 2026</span>
+        <span>&Sigma; 8A Classroom</span>
+        <span>&infin; 23 Stalls</span>
+      </div>
+    </div>
+    <div class="scroll-nudge">
+      <span>Explore the stalls</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <section class="feedback-banner">
+    <p>Enjoyed the expo?</p>
+    <a href="feedback.html" class="feedback-banner-link">Share Your Feedback &rarr;</a>
+  </section>
+
+  <section class="search-section">
+    <div class="search-bar">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search stalls by name or topic...">
+    </div>
+    <p class="stall-count" id="stallCount"></p>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="veg"><span class="diet-dot veg"></span>Veg</button>
+      <button class="filter-btn" data-filter="egg"><span class="diet-dot egg"></span>Egg</button>
+      <button class="filter-btn" data-filter="nonveg"><span class="diet-dot nonveg"></span>Non-Veg</button>
+    </div>
+  </section>
+
+  <section class="stalls-section">
+    <div class="stalls-grid" id="stallsGrid">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <span>Loading stalls...</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-cta">Enjoyed the expo?</p>
+    <a href="feedback.html" class="footer-link">Share Your Feedback &rarr;</a>
+    <p class="footer-text">NUMB3RS &amp; Nibbles 2026</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
