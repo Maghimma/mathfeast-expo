@@ -204,7 +204,7 @@
       "The Pizza Theorem"
     ],
     "ingredients": "Pizza base, sauce, cheese, onion, capsicum, corn.",
-    "sampleAvailable": "maybe",
+    "sampleAvailable": true,
     "dietary": "veg"
   },
   {
