@@ -409,9 +409,16 @@ function wireEditForm(stall) {
 
   toggle.addEventListener('click', () => {
     const open = section.style.display !== 'none';
-    section.style.display = open ? 'none' : 'block';
-    toggle.textContent = open ? 'Edit Details' : 'Cancel Editing';
-    if (!open) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (open) {
+      section.style.display = 'none';
+      toggle.textContent = 'Edit Details';
+    } else {
+      const ok = confirm('Are you sure you want to edit this stall?\n\nOnly edit if you are part of this stall\'s team. Changes will be visible to everyone.');
+      if (!ok) return;
+      section.style.display = 'block';
+      toggle.textContent = 'Cancel Editing';
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 
   cancel.addEventListener('click', () => {
