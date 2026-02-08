@@ -160,10 +160,10 @@
     "name": "Math Venture",
     "presenter": "Sarah",
     "topic": "Shapes & Geometry Formulae",
-    "dish": "Ladoo & Barfi",
-    "shortDescription": "See geometry come alive through traditional Indian sweets — from spherical ladoos to rectangular barfi!",
-    "fullDescription": "Ladoos are spheres, barfi comes in rectangles, and every sweet has a story told through geometry. Sarah uses beloved Indian desserts to explore 3D shapes, surface areas, and volume formulae in the most delicious way possible. Calculate the volume of a perfect ladoo, find the surface area of a barfi slab, and discover the geometric precision hidden in every sweet shop. Math has never tasted this good!",
-    "image": "images/stall-7-sweets.jpeg",
+    "dish": "Brownies",
+    "shortDescription": "See geometry come alive through rich, fudgy brownies — from perfect squares to precise volume calculations!",
+    "fullDescription": "Every brownie batch is a lesson in geometry and measurement. Sarah uses delicious chocolate brownies to explore 3D shapes, surface areas, and volume formulae in the most delicious way possible. Calculate the volume of a brownie pan, figure out how to cut perfectly equal squares, and discover the geometric precision behind getting that perfect fudgy center. Math has never tasted this good!",
+    "image": "images/stall-7-brownies.jpeg",
     "team": [
       {
         "name": "Sarah",
@@ -177,9 +177,9 @@
       "Geometry formulae",
       "Spatial reasoning"
     ],
-    "ingredients": "Besan/coconut, ghee, sugar/jaggery, cardamom, nuts (or milk + sugar for barfi).",
+    "ingredients": "Flour, butter, sugar, eggs, cocoa powder, chocolate, vanilla essence, salt.",
     "sampleAvailable": true,
-    "dietary": "veg"
+    "dietary": "egg"
   },
   {
     "id": 8,
