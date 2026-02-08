@@ -155,6 +155,7 @@ function mergeEdits(stalls, edits) {
     if (edit.shortDescription) merged.shortDescription = edit.shortDescription;
     if (edit.fullDescription) merged.fullDescription = edit.fullDescription;
     if (edit.ingredients) merged.ingredients = edit.ingredients;
+    if (edit.image) merged.image = edit.image;
     return merged;
   });
 }
@@ -330,6 +331,18 @@ async function initStallPage() {
             <label for="editIngredients">Ingredients</label>
             <textarea id="editIngredients">${stall.ingredients || ''}</textarea>
           </div>
+          <div class="form-group">
+            <label for="editImage">Change Photo</label>
+            <div class="image-upload-area" id="imageUploadArea">
+              <input type="file" id="editImage" accept="image/*" style="display:none">
+              <div class="image-upload-placeholder" id="imageUploadPlaceholder">
+                <span class="image-upload-icon">📷</span>
+                <span>Tap to choose a new photo</span>
+              </div>
+              <img id="imagePreview" class="image-preview" style="display:none" alt="Preview">
+              <button type="button" class="btn-remove-image" id="removeImage" style="display:none">✕ Remove</button>
+            </div>
+          </div>
           <div class="edit-actions">
             <button type="submit" class="btn-submit">Save Changes</button>
             <button type="button" class="btn-cancel" id="editCancel">Cancel</button>
@@ -400,12 +413,66 @@ function renderNotFound(el) {
 //  EDIT FORM
 // ════════════════════════
 
+function compressImage(file, maxWidth = 800) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const scale = Math.min(1, maxWidth / img.width);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.6));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+let pendingImageBase64 = null;
+
 function wireEditForm(stall) {
   const toggle  = document.getElementById('editToggle');
   const section = document.getElementById('editSection');
   const cancel  = document.getElementById('editCancel');
   const form    = document.getElementById('stallEditForm');
   if (!toggle || !section || !form) return;
+
+  // Image upload wiring
+  const fileInput   = document.getElementById('editImage');
+  const uploadArea  = document.getElementById('imageUploadArea');
+  const placeholder = document.getElementById('imageUploadPlaceholder');
+  const preview     = document.getElementById('imagePreview');
+  const removeBtn   = document.getElementById('removeImage');
+  pendingImageBase64 = null;
+
+  if (uploadArea && fileInput) {
+    placeholder.addEventListener('click', () => fileInput.click());
+    preview.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      pendingImageBase64 = await compressImage(file);
+      preview.src = pendingImageBase64;
+      preview.style.display = 'block';
+      placeholder.style.display = 'none';
+      removeBtn.style.display = 'inline-flex';
+    });
+
+    removeBtn.addEventListener('click', () => {
+      pendingImageBase64 = null;
+      fileInput.value = '';
+      preview.style.display = 'none';
+      preview.src = '';
+      placeholder.style.display = 'flex';
+      removeBtn.style.display = 'none';
+    });
+  }
 
   toggle.addEventListener('click', () => {
     const open = section.style.display !== 'none';
@@ -441,7 +508,8 @@ function wireEditForm(stall) {
         document.getElementById('editDish').value.trim(),
         document.getElementById('editShort').value.trim(),
         document.getElementById('editFull').value.trim(),
-        document.getElementById('editIngredients').value.trim()
+        document.getElementById('editIngredients').value.trim(),
+        pendingImageBase64 || ''
       ]
     });
 
